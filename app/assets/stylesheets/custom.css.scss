@@ -11,6 +11,13 @@ $logocolor: white;
   box-sizing: border-box;
 }
 
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
 body {
   padding-top: 60px;
 }
@@ -114,4 +121,46 @@ footer {
   width: 100%;
   margin-top: 45px;
   @include box_sizing;
+}
+
+/* sidebar */
+
+aside {
+  border-color: #facade;
+  border-style: outset;
+  border-width: 2px;
+  @include border-radius(10px);
+  
+  section.user_info {
+    margin-top: 20px;
+  }
+  section {
+    padding: 10px 0;
+    margin-top: 20px;
+    &:first-child {
+      border: 0;
+      padding-top: 0;
+    }
+    span {
+      display: block;
+      margin-bottom: 3px;
+      line-height: 1;
+    }
+    h1 {
+      font-size: 1.4em;
+      text-align: left;
+      letter-spacing: -1px;
+      margin-bottom: 3px;
+      margin-top: 0px;
+    }
+  }
+}
+
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+
+.gravatar_edit {
+  margin-top: 15px;
 }
