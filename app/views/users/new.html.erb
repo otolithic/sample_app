@@ -1,3 +1,23 @@
 <% provide(:title, 'Sign up') %>
 <h1>Give me your information</h1>
-<p>there's no way this could be a bad idea</p>
+<center>there's no way this could be a bad idea</center>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@user) do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+      
+      <%= f.label :email %>
+      <%= f.email_field :email %>
+      
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+      
+      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.password_field :password_confirmation %>
+      
+      <%= f.submit "cast soul into void", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
