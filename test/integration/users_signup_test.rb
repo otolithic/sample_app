@@ -10,6 +10,9 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
                                 password_confirmation: "bar" }
       end
       assert_template 'users/new'
+      
+      assert_select 'div#error_explanation', true
+      assert_select 'div.field_with_errors', true
   end
   
   test "creation if user info valid" do
@@ -22,4 +25,5 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     end
     assert_template 'users/show'
   end
+  
 end
